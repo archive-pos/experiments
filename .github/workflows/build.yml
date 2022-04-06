@@ -1,4 +1,4 @@
-name: learn-github-actions
+name: Build
 on: [push]
 jobs:
   check-bats-version:
@@ -9,9 +9,9 @@ jobs:
         with:
           node-version: "14"
       - run: npm install
-      - run: node time.js
+      - run: node build.js
       # Commit the changes
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          message: "Update time"
+          message: "Build"
           branch: master
